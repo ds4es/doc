@@ -83,14 +83,14 @@
               <ul class="current">
 <li class="toctree-l1 current"><a class="current reference internal" href="#">How to Contribute</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#ways-to-contribute">Ways to contribute</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#submitting-a-bug-report-or-a-feature-request">Submitting a bug report or a feature request</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#contributing-code">Contributing code</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#documentation">Documentation</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#testing-and-improving-test-coverage">Testing and improving test coverage</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#issue-tracker-tags">Issue Tracker Tags</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#maintaining-backwards-compatibility">Maintaining backwards compatibility</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#code-review-guidelines">Code Review Guidelines</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#reading-the-existing-code-base">Reading the existing code base</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#contributing-code">Contributing code</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#option-1-edit-changes-directly-on-github">Option 1: Edit changes directly on GitHub</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#option-2-edit-changes-on-a-local-computer">Option 2: Edit changes on a local computer</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#resolving-conflict">Resolving conflict</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#pull-request-checklist">Pull request checklist</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#contributing-documentation">Contributing documentation</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="coding_guidelines.html">Coding Guidelines</a></li>
@@ -161,33 +161,111 @@
             
   <div class="section" id="how-to-contribute">
 <h1>How to Contribute<a class="headerlink" href="#how-to-contribute" title="Permalink to this headline">¶</a></h1>
-<p><a class="reference external" href="https://scikit-learn.org/dev/developers/contributing.html">https://scikit-learn.org/dev/developers/contributing.html</a></p>
+<p>These projects are a community effort, and everyone is welcome to contribute.</p>
+<p>The projects are hosted on <a class="reference external" href="https://github.com/ds4es">https://github.com/ds4es</a></p>
 <div class="section" id="ways-to-contribute">
 <h2>Ways to contribute<a class="headerlink" href="#ways-to-contribute" title="Permalink to this headline">¶</a></h2>
-</div>
-<div class="section" id="submitting-a-bug-report-or-a-feature-request">
-<h2>Submitting a bug report or a feature request<a class="headerlink" href="#submitting-a-bug-report-or-a-feature-request" title="Permalink to this headline">¶</a></h2>
+<p>There are many ways to contribute to the <strong>Data Science for Emergency Services project</strong>. Improving the documentation is no less important than improving code.</p>
 </div>
 <div class="section" id="contributing-code">
 <h2>Contributing code<a class="headerlink" href="#contributing-code" title="Permalink to this headline">¶</a></h2>
+<p>To contribute to any ds4es GitHub repo <strong>in brief:</strong> start by forking it on GitHub, edit your forked version of the repo and submit a “pull request”.</p>
+<p><strong>In details:</strong>
+1. <a class="reference external" href="https://github.com/join">Create a GitHub account</a> if you do not already have one.</p>
+<ol class="arabic simple" start="2">
+<li><p>On GitHub under the project you want to contribute click on the ‘Fork’
+button near the top of the page. This creates a copy of the code under your GitHub user account.</p></li>
+</ol>
+<div class="figure align-center">
+<img alt="_images/fork.jpg" src="_images/fork.jpg" />
 </div>
-<div class="section" id="documentation">
-<h2>Documentation<a class="headerlink" href="#documentation" title="Permalink to this headline">¶</a></h2>
+<p>From there you have 2 options to make changes to your fork:</p>
+<ul class="simple">
+<li><p>directly on GitHub at <a class="reference external" href="https://github.com/your_user_name/repo_name">https://github.com/your_user_name/repo_name</a></p></li>
+<li><p>or on your local machine</p></li>
+</ul>
+<div class="section" id="option-1-edit-changes-directly-on-github">
+<h3>Option 1: Edit changes directly on GitHub<a class="headerlink" href="#option-1-edit-changes-directly-on-github" title="Permalink to this headline">¶</a></h3>
+<p>//TODO</p>
 </div>
-<div class="section" id="testing-and-improving-test-coverage">
-<h2>Testing and improving test coverage<a class="headerlink" href="#testing-and-improving-test-coverage" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="option-2-edit-changes-on-a-local-computer">
+<h3>Option 2: Edit changes on a local computer<a class="headerlink" href="#option-2-edit-changes-on-a-local-computer" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic" start="3">
+<li><p>Clone the fork from your GitHub account to your local disk:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">clone</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">your_user_name</span><span class="o">/</span><span class="n">repo_name</span>
+<span class="n">cd</span> <span class="n">repo_name</span>
+</pre></div>
 </div>
-<div class="section" id="issue-tracker-tags">
-<h2>Issue Tracker Tags<a class="headerlink" href="#issue-tracker-tags" title="Permalink to this headline">¶</a></h2>
+</li>
+<li><p>If needed install the project dependencies:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="o">-</span><span class="n">r</span> <span class="n">requirements</span><span class="o">.</span><span class="n">txt</span>
+</pre></div>
 </div>
-<div class="section" id="maintaining-backwards-compatibility">
-<h2>Maintaining backwards compatibility<a class="headerlink" href="#maintaining-backwards-compatibility" title="Permalink to this headline">¶</a></h2>
+</li>
+<li><p>Add the <code class="docutils literal notranslate"><span class="pre">upstream</span></code> remote. This saves a reference to the main
+repository, which you can use to keep your repository
+synchronized with the latest changes:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">remote</span> <span class="n">add</span> <span class="n">upstream</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">ds4es</span><span class="o">/</span><span class="n">repo_name</span>
+</pre></div>
 </div>
-<div class="section" id="code-review-guidelines">
-<h2>Code Review Guidelines<a class="headerlink" href="#code-review-guidelines" title="Permalink to this headline">¶</a></h2>
+</li>
+</ol>
+<p>You have now a git repository properly configured. Next steps describe the process of modifying code and submitting a pull request:</p>
+<ol class="arabic" start="6">
+<li><p>Synchronize your master branch with the upstream master branch:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">checkout</span> <span class="n">master</span>
+<span class="n">git</span> <span class="n">pull</span> <span class="n">upstream</span> <span class="n">master</span>
+</pre></div>
 </div>
-<div class="section" id="reading-the-existing-code-base">
-<h2>Reading the existing code base<a class="headerlink" href="#reading-the-existing-code-base" title="Permalink to this headline">¶</a></h2>
+</li>
+</ol>
+<ol class="arabic" start="8">
+<li><p>Create a feature branch to hold your development changes:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">checkout</span> <span class="o">-</span><span class="n">b</span> <span class="n">my_feature_branch</span>
+</pre></div>
+</div>
+</li>
+<li><p>Make the changes on your feature branch on your computer. It’s good
+practice to never work on the <code class="docutils literal notranslate"><span class="pre">master</span></code> branch!
+When you’re done editing, save your changes locally with <cite>add</cite> and <cite>commit</cite>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">add</span> <span class="o">.</span>
+<span class="n">git</span> <span class="n">commit</span>
+</pre></div>
+</div>
+<p>, then push the changes to your fork on GitHub:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">push</span> <span class="o">-</span><span class="n">u</span> <span class="n">origin</span> <span class="n">my_feature_branch</span>
+</pre></div>
+</div>
+</li>
+<li><p>Follow <a class="reference external" href="https://help.github.com/articles/creating-a-pull-request-from-a-fork">these</a>
+instructions to create a pull request from your fork. This will send an
+email to the committers.</p></li>
+</ol>
+<p>It is a good pratice to keep your local feature branch synchronized with the latest changes of the main repository defined on 5.:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">fetch</span> <span class="n">upstream</span>
+<span class="n">git</span> <span class="n">merge</span> <span class="n">upstream</span><span class="o">/</span><span class="n">master</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="resolving-conflict">
+<h3>Resolving conflict<a class="headerlink" href="#resolving-conflict" title="Permalink to this headline">¶</a></h3>
+<p>You might need to solve conflicts, for that purpose check the
+<a class="reference external" href="https://help.github.com/articles/resolving-a-merge-conflict-using-the-command-line/">Git documentation related to resolving merge conflict using the command
+line</a>.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The <a class="reference external" href="https://git-scm.com/documentation">Git documentation</a> <a class="reference external" href="http://try.github.io">http://try.github.io</a> are excellent resources to get started with git, and understanding all of the commands shown here.</p>
+</div>
+</div>
+<div class="section" id="pull-request-checklist">
+<h3>Pull request checklist<a class="headerlink" href="#pull-request-checklist" title="Permalink to this headline">¶</a></h3>
+<p>//TODO</p>
+</div>
+</div>
+<div class="section" id="contributing-documentation">
+<h2>Contributing documentation<a class="headerlink" href="#contributing-documentation" title="Permalink to this headline">¶</a></h2>
+<p>//TODO</p>
+<p><a class="reference external" href="https://scikit-learn.org/dev/developers/contributing.html">https://scikit-learn.org/dev/developers/contributing.html</a></p>
 </div>
 </div>
 

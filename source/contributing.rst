@@ -1,38 +1,106 @@
 How to Contribute
 =================
 
-This project is a community effort, and everyone is welcome to contribute.
+These projects are a community effort, and everyone is welcome to contribute.
 
-The project is hosted on https://github.com/ds4es
-
+The projects are hosted on https://github.com/ds4es
 
 Ways to contribute
 ------------------
-There are many ways to contribute to the Data Science for Emergency Services project. Improving the documentation is no less important than improving code.
+There are many ways to contribute to the **Data Science for Emergency Services project**. Improving the documentation is no less important than improving code.
 
 Contributing code
 -----------------
 
-Documentation
--------------
+To contribute to any ds4es GitHub repo **in brief:** start by forking it on GitHub, edit your forked version of the repo and submit a "pull request".
 
-Submitting a bug report or a feature request
---------------------------------------------
+**In details:**
+1. `Create a GitHub account <https://github.com/join>`_ if you do not already have one.
 
-Testing and improving test coverage
------------------------------------
+2. On GitHub under the project you want to contribute click on the 'Fork'
+   button near the top of the page. This creates a copy of the code under your GitHub user account. 
 
-Issue Tracker Tags
-------------------
+.. figure::  _static/images/contributing/fork.jpg
+   :align:   center
 
-Maintaining backwards compatibility
------------------------------------
+From there you have 2 options to make changes to your fork:
 
-Code Review Guidelines
-----------------------
+* directly on GitHub at https://github.com/your_user_name/repo_name
+* or on your local machine
 
-Reading the existing code base
-------------------------------
+Option 1: Edit changes directly on GitHub
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+//TODO
 
+Option 2: Edit changes on a local computer
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+3. Clone the fork from your GitHub account to your local disk::
+
+		git clone https://github.com/your_user_name/repo_name
+		cd repo_name
+
+4. If needed install the project dependencies::
+
+		pip install -r requirements.txt
+
+5. Add the ``upstream`` remote. This saves a reference to the main
+   repository, which you can use to keep your repository
+   synchronized with the latest changes::
+
+		git remote add upstream https://github.com/ds4es/repo_name
+
+You have now a git repository properly configured. Next steps describe the process of modifying code and submitting a pull request:
+
+6. Synchronize your master branch with the upstream master branch::
+
+		git checkout master
+		git pull upstream master
+
+8. Create a feature branch to hold your development changes::
+
+		git checkout -b my_feature_branch
+
+9. Make the changes on your feature branch on your computer. It's good
+   practice to never work on the ``master`` branch!
+   When you're done editing, save your changes locally with `add` and `commit`::
+
+		git add .
+		git commit
+
+   , then push the changes to your fork on GitHub::
+
+		git push -u origin my_feature_branch
+
+
+10. Follow `these
+    <https://help.github.com/articles/creating-a-pull-request-from-a-fork>`_
+    instructions to create a pull request from your fork. This will send an
+    email to the committers.
+
+It is a good pratice to keep your local feature branch synchronized with the latest changes of the main repository defined on 5.::
+
+		git fetch upstream
+		git merge upstream/master
+
+Resolving conflict
+^^^^^^^^^^^^^^^^^^
+You might need to solve conflicts, for that purpose check the
+`Git documentation related to resolving merge conflict using the command
+line <https://help.github.com/articles/resolving-a-merge-conflict-using-the-command-line/>`_.
+
+.. note::
+
+  The `Git documentation <https://git-scm.com/documentation>`_ http://try.github.io are excellent resources to get started with git, and understanding all of the commands shown here.
+
+Pull request checklist
+^^^^^^^^^^^^^^^^^^^^^^
+
+//TODO 
+
+Contributing documentation
+--------------------------
+
+//TODO
 
 https://scikit-learn.org/dev/developers/contributing.html

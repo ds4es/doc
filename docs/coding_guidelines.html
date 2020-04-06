@@ -35,8 +35,8 @@
   <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Project Structure" href="ds_project_template.html" />
-    <link rel="prev" title="Contributing" href="contributing.html" /> 
+    <link rel="next" title="Data Science Project Template" href="ds_project_template.html" />
+    <link rel="prev" title="How to Contribute" href="contributing.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -81,9 +81,9 @@
             
             
               <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="contributing.html">Contributing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="contributing.html">How to Contribute</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Coding Guidelines</a></li>
-<li class="toctree-l1"><a class="reference internal" href="ds_project_template.html">Project Structure</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ds_project_template.html">Data Science Project Template</a></li>
 </ul>
 
             
@@ -150,7 +150,365 @@
             
   <div class="section" id="coding-guidelines">
 <h1>Coding Guidelines<a class="headerlink" href="#coding-guidelines" title="Permalink to this headline">¶</a></h1>
-<p><a class="reference external" href="https://scikit-learn.org/dev/developers/develop.html#coding-guidelines">https://scikit-learn.org/dev/developers/develop.html#coding-guidelines</a></p>
+<p>Good guidelines to follow are the official Python guidelines detailed in <a class="reference external" href="https://www.python.org/dev/peps/pep-0008">PEP8</a></p>
+<p>A good example is:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># taken from here: http://web.archive.org/web/20110527163743/https://svn.enthought.com/enthought/browser/sandbox/docs/coding_standard.py</span>
+
+<span class="sd">&quot;&quot;&quot; This module is an example of the Enthought Python coding standards.</span>
+<span class="sd">It was adapted from the Python Enhancement Proposal 8 (aka PEP 8) titled</span>
+<span class="sd">&#39;Style Guide for Python Code&#39; (http://www.python.org/peps/pep-0008.html).</span>
+<span class="sd">The first item in a module must be a documentation string (docstring).  The</span>
+<span class="sd">first line of the docstring should be a one line summary.  If a more</span>
+<span class="sd">detailed description is required, put an empty line before it.</span>
+<span class="sd">Package names are lowercase with an underscore to separate each word and are</span>
+<span class="sd">ALWAYS singular:-</span>
+<span class="sd">e.g.</span>
+<span class="sd">    widget</span>
+<span class="sd">    event_handler</span>
+<span class="sd">Module names are lowercase with an underscore to separate each word.</span>
+<span class="sd">e.g.</span>
+<span class="sd">    coding_standard.py</span>
+<span class="sd">    my_class.py</span>
+<span class="sd">Module Length</span>
+<span class="sd">-------------</span>
+<span class="sd">A python module should under normal circumstances be no longer than 500 lines</span>
+<span class="sd">of code *including* comments (and even that&#39;s pushing it!).  There are certain</span>
+<span class="sd">mitigating circumstances such as modules containing a collection of related</span>
+<span class="sd">library functions, but even then, think about any possible logical groupings</span>
+<span class="sd">and split them up accordingly.</span>
+<span class="sd">&quot;&quot;&quot;</span>
+
+<span class="c1"># Indentation</span>
+<span class="c1"># -----------</span>
+<span class="c1"># Each indentation level should be 4 spaces.  Code should always be indented</span>
+<span class="c1"># with spaces only.  Code indented with a mixture of tabs and spaces should be</span>
+<span class="c1"># converted to using spaces exclusively (In Emacs, make sure that</span>
+<span class="c1"># &#39;indent-tabs-mode&#39; is nil, or select the whole buffer and hit</span>
+<span class="c1"># ESC-x untabify).  When invoking the python command line interpreter with the</span>
+<span class="c1"># -t option, it issues warnings about code that illegally mixes tabs and</span>
+<span class="c1"># spaces.  When using -tt these warnings become errors.  These options are</span>
+<span class="c1"># highly recommended!</span>
+
+<span class="c1"># Line length</span>
+<span class="c1"># -----------</span>
+<span class="c1"># Lines must not exceed 79 characters in length (in deference to Emacs users...</span>
+<span class="c1"># ... as Emacs wraps on the 80th column).</span>
+<span class="c1">#</span>
+<span class="c1"># The preferred way of wrapping long lines is by using Python&#39;s implied line</span>
+<span class="c1"># continuation inside parentheses, brackets and braces. If necessary, you can</span>
+<span class="c1"># add an extra pair of parentheses around an expression, but somtimes using a</span>
+<span class="c1"># backslash looks better.  Make sure to indent the continued line</span>
+<span class="c1"># appropriately.  Emacs Python-mode does this right.</span>
+
+
+<span class="c1"># Import Statements</span>
+<span class="c1"># -----------------</span>
+<span class="c1"># Import statements are always put at the top of the file, just after any</span>
+<span class="c1"># module comments and docstrings, and before any module globals and constants.</span>
+<span class="c1">#</span>
+<span class="c1"># Imports should be grouped and ordered as follows:-</span>
+<span class="c1">#</span>
+<span class="c1"># 1. Standard library imports</span>
+<span class="c1"># 2. Related major package imports (i.e. all email package imports next).</span>
+<span class="c1"># 3. Application specific imports.</span>
+<span class="c1"># 4. Local imports (ie. local to the current package).</span>
+<span class="c1">#</span>
+<span class="c1"># You should put a blank line between each group of imports.</span>
+<span class="c1">#</span>
+<span class="c1"># Relative imports for intra-package imports are highly discouraged.  Always</span>
+<span class="c1"># use the absolute package path for all imports.</span>
+<span class="c1">#</span>
+<span class="c1"># Imports should be USUALLY be on separate lines:-</span>
+
+<span class="c1"># Standard library imports.</span>
+<span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">import</span> <span class="nn">sys</span>
+
+<span class="c1"># Although it is okay to say this:-</span>
+<span class="kn">from</span> <span class="nn">types</span> <span class="kn">import</span> <span class="n">StringType</span><span class="p">,</span> <span class="n">ListType</span>
+
+<span class="c1"># And I think this looks OK to as long as it doesn&#39;t turn into a list</span>
+<span class="c1"># of more than ~5.</span>
+<span class="kn">import</span> <span class="nn">os</span><span class="o">,</span> <span class="nn">sys</span>
+
+<span class="c1"># Major packages.</span>
+<span class="kn">import</span> <span class="nn">wx</span>
+<span class="kn">import</span> <span class="nn">chaco</span>
+
+<span class="c1"># Application specific imports.</span>
+<span class="kn">from</span> <span class="nn">baz</span> <span class="kn">import</span> <span class="n">Baz</span>
+
+<span class="c1"># Local imports.</span>
+<span class="kn">from</span> <span class="nn">local</span> <span class="kn">import</span> <span class="n">Local</span>
+
+<span class="c1"># The following form of the import statement should be used with EXTREME</span>
+<span class="c1"># caution, and only when importing names from a large and fundemental package</span>
+<span class="c1"># such as Numeric or scipy, and even then, only when there are a large number</span>
+<span class="c1"># of names being imported (for example, do not use &#39;from Numeric import *&#39; if</span>
+<span class="c1"># &#39;from Numeric import array will do ;^).</span>
+<span class="kn">from</span> <span class="nn">mypackage</span> <span class="kn">import</span> <span class="o">*</span>
+
+<span class="c1"># Comments</span>
+<span class="c1"># --------</span>
+<span class="c1">#</span>
+<span class="c1"># Comments are a great.  Learn to write good comments.  Or else!  Comments that</span>
+<span class="c1"># contradict the code are worse than no comments.  Always make a priority of</span>
+<span class="c1"># keeping the comments up-to-date when the code changes!</span>
+<span class="c1">#</span>
+<span class="c1"># Comments should be complete sentences.  If a comment is a phrase or</span>
+<span class="c1"># sentence, its first word should be capitalized, unless it is an identifier</span>
+<span class="c1"># that begins with a lower case letter (never alter the case of identifiers!).</span>
+<span class="c1">#</span>
+<span class="c1"># Block comments generally consist of one or more paragraphs built out of</span>
+<span class="c1"># complete sentences, and each sentence should end in a period.</span>
+<span class="c1">#</span>
+<span class="c1"># You should use two spaces after a sentence-ending period, since it makes</span>
+<span class="c1"># Emacs wrapping and filling work consistently.</span>
+<span class="c1">#</span>
+<span class="c1"># When writing English, Strunk and White apply.</span>
+
+<span class="c1"># Docstrings</span>
+<span class="c1"># ----------</span>
+<span class="c1">#</span>
+<span class="c1"># The first line of a docstring should be a one line summary. As noted in the</span>
+<span class="c1"># example below.  Follow that line with a blank line, and then continue with a</span>
+<span class="c1"># description or examples as appropriate.  Examples are called out on a new</span>
+<span class="c1"># line, indented an additional four spaces, and begin with &gt;&gt;&gt;.</span>
+<span class="c1"># This convention will produce nicely formated examples in the resulting html</span>
+<span class="c1">#  pages, so do not hesitate to use it.  Conventions for writing good</span>
+<span class="c1"># docstrings are found in PEP 257 (http://www.python.org/peps/pep-0257.html).</span>
+
+<span class="k">def</span> <span class="nf">my_function</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot; A function definition must contain a docstring.</span>
+<span class="sd">    Function names are lowercase with an underscore used to separate each word.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="c1"># Block comments generally apply to some (or all) code that follows them,</span>
+    <span class="c1"># and are indented to the same level as that code.  Each line of a block</span>
+    <span class="c1"># comment starts with a # and a single space (unless it is indented text</span>
+    <span class="c1"># inside the comment).</span>
+    <span class="c1">#</span>
+    <span class="c1"># Paragraphs inside a block comment are separated by a line.</span>
+    <span class="n">s</span> <span class="o">=</span> <span class="n">x</span> <span class="o">+</span> <span class="n">y</span> <span class="o">+</span> <span class="n">z</span>
+
+    <span class="c1"># An inline comment is a comment on the same line as a statement.</span>
+    <span class="c1"># Inline comments should be used SPARINGLY.  Inline comments should be</span>
+    <span class="c1"># separated by at least two spaces from the statement.  They should start</span>
+    <span class="c1"># with a # and a single space.</span>
+    <span class="c1">#</span>
+    <span class="c1"># Remember to use SPARINGLY, although sometimes, they can be useful:-</span>
+    <span class="n">s</span> <span class="o">=</span> <span class="n">s</span> <span class="o">+</span> <span class="mi">1</span>    <span class="c1"># Compensate for the border.</span>
+
+    <span class="k">return</span> <span class="n">s</span>
+
+
+<span class="k">class</span> <span class="nc">FooBar</span><span class="p">(</span><span class="n">Baz</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot; A class definition must contain a docstring.</span>
+<span class="sd">    As always the first line of the docstring must be a one line summary.</span>
+<span class="sd">    Class names are CamelCase.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="c1"># Both traits and methods should be grouped by the &#39;role&#39; or &#39;interface&#39;</span>
+    <span class="c1"># that they are part of.  This is the syntax that I use to mark them.</span>
+
+    <span class="c1">#### &#39;Baz&#39; interface #####################################################</span>
+
+    <span class="c1"># ALL traits must be commented.</span>
+    <span class="n">name</span> <span class="o">=</span> <span class="n">Str</span>
+
+    <span class="c1"># Non-public traits (ie. those intended to be either &#39;protected&#39; or</span>
+    <span class="c1"># private) should be preceded by single or double underscores as for</span>
+    <span class="c1"># ordinary Python attributes).</span>
+
+    <span class="c1">#### Protected interface ##################################################</span>
+
+    <span class="n">_a_non_public_trait</span> <span class="o">=</span> <span class="n">Dict</span>
+
+    <span class="c1">###########################################################################</span>
+    <span class="c1"># &#39;object&#39; interface.</span>
+    <span class="c1">###########################################################################</span>
+
+    <span class="c1"># &#39;Special&#39; methods (ie. those methods starting and ending in double</span>
+    <span class="c1"># underscores) should usually be grouped at the start of the class</span>
+    <span class="c1"># definition.  The exception is when the class is implementing the</span>
+    <span class="c1"># interface of a built-in type such as &#39;list&#39; or &#39;dict&#39;.  In that case</span>
+    <span class="c1"># the special methods on the interface follow the rules listed below.</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot; Creates a new Foo. &quot;&quot;&quot;</span>
+
+        <span class="c1"># Attribute names are lowercase with an underscore used to separate</span>
+        <span class="c1"># each word.</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">public_attribute</span> <span class="o">=</span> <span class="mi">1</span>
+
+        <span class="c1"># A non-public attribute starts with a single underscore.  This does</span>
+        <span class="c1"># not enforce any limitation on the attribute&#39;s use, but it shows that</span>
+        <span class="c1"># the attribute is intended for use only by this class and any derived</span>
+        <span class="c1"># classes.</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_non_public_attribute</span> <span class="o">=</span> <span class="s2">&quot;Hi there&quot;</span>
+
+        <span class="c1"># A private attribute starts with a double underscore.  Python will</span>
+        <span class="c1"># mangle such names so that they are invisible outside of the class.</span>
+        <span class="c1">#</span>
+        <span class="c1"># Well, actually you can get to them if you try hard enough - although</span>
+        <span class="c1"># to save time just clear your desk and have security escort you out of</span>
+        <span class="c1"># the building.  Its been great working with you ;^).</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">__private_attribute</span> <span class="o">=</span> <span class="mi">42</span>
+
+        <span class="c1"># Functions/methods that do not return a value should still be</span>
+        <span class="c1"># delimited by a return statement.  Please tell me you don&#39;t have to</span>
+        <span class="c1"># ask why!</span>
+        <span class="k">return</span>
+
+    <span class="c1"># Methods should be grouped and ordered as follows:-</span>
+    <span class="c1">#</span>
+    <span class="c1"># 1) &#39;object interface (ie. special methods).</span>
+    <span class="c1"># 2) Methods offered on inherited or delegated interfaces of the class.</span>
+    <span class="c1"># 3) Methods offered on the primary public interface of the class.</span>
+    <span class="c1"># 4) Non-public methods.</span>
+    <span class="c1"># 5) Private methods.</span>
+
+    <span class="c1">###########################################################################</span>
+    <span class="c1"># &#39;Baz&#39; interface.</span>
+    <span class="c1">###########################################################################</span>
+
+    <span class="k">def</span> <span class="nf">an_overridden_bar_method</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot; A method definition must contain a docstring.</span>
+<span class="sd">        Method names are lowercase with an underscore used to separate each</span>
+<span class="sd">        word.</span>
+<span class="sd">        The ONLY exception to this is if you are inherting from a 3rd-party</span>
+<span class="sd">        class that uses a different naming convention (eg. wxPython</span>
+<span class="sd">        uses CamelCase method names).  In that case you must follow the same</span>
+<span class="sd">        style as the 3rd-party class (assuming it is consistent of course ;^).</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="k">pass</span>
+
+    <span class="c1">###########################################################################</span>
+    <span class="c1"># &#39;FooBar&#39; interface.</span>
+    <span class="c1">###########################################################################</span>
+
+    <span class="k">def</span> <span class="nf">my_function</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot; A method definition must contain a docstring. &quot;&quot;&quot;</span>
+
+        <span class="k">return</span> <span class="n">x</span> <span class="o">+</span> <span class="n">y</span> <span class="o">+</span> <span class="n">z</span>
+
+    <span class="c1">###########################################################################</span>
+    <span class="c1"># Protected interface.</span>
+    <span class="c1">###########################################################################</span>
+
+    <span class="k">def</span> <span class="nf">_non_public_method</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot; A non-public method starts with a single underscore.</span>
+<span class="sd">        This does not enforce any limitation on the method&#39;s use, but it</span>
+<span class="sd">        shows that it is intended for use only by this class and any derived</span>
+<span class="sd">        classes.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="k">pass</span>
+
+    <span class="c1">###########################################################################</span>
+    <span class="c1"># Private interface.</span>
+    <span class="c1">###########################################################################</span>
+
+    <span class="k">def</span> <span class="nf">__private_method</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot; A private method starts with a double underscore.</span>
+<span class="sd">        Python will mangle such names so that they are invisible outside of</span>
+<span class="sd">        the class.</span>
+<span class="sd">        Well, actually you can get to them if you try hard enough - although</span>
+<span class="sd">        to save time just clear your desk and have security escort you out of</span>
+<span class="sd">        the building.  Its been great working with you ;^).</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="k">pass</span>
+
+
+<span class="c1"># Exceptions</span>
+<span class="c1"># ----------</span>
+<span class="c1">#</span>
+<span class="c1"># Always use class exceptions instead of the old-style string exceptions.</span>
+<span class="k">class</span> <span class="nc">MessageError</span><span class="p">(</span><span class="ne">Exception</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot; Base class for errors in the email package.</span>
+<span class="sd">    Exceptions are classes too! Hence exception names are CamelCase.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">pass</span>
+
+
+<span class="c1"># Whitespace in Expressions and Statements</span>
+<span class="k">def</span> <span class="nf">example</span><span class="p">():</span>
+    <span class="sd">&quot;&quot;&quot; How to use whitespace in expressions and statements. &quot;&quot;&quot;</span>
+
+    <span class="c1"># Around brackets, parentheses and braces:-</span>
+    <span class="c1">#</span>
+    <span class="c1"># BAD</span>
+    <span class="n">spam</span><span class="p">(</span> <span class="n">ham</span><span class="p">[</span> <span class="mi">1</span> <span class="p">],</span> <span class="p">{</span> <span class="n">eggs</span><span class="p">:</span> <span class="mi">2</span> <span class="p">}</span> <span class="p">)</span>
+
+    <span class="c1"># GOOD</span>
+    <span class="n">spam</span><span class="p">(</span><span class="n">ham</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="p">{</span><span class="n">eggs</span> <span class="p">:</span> <span class="mi">2</span><span class="p">})</span>
+
+    <span class="c1"># Around a comma, semicolon, or colon, as in (although multi-statement</span>
+    <span class="c1"># lines are STRONGLY discouraged!):-</span>
+    <span class="c1">#</span>
+    <span class="c1"># BAD</span>
+    <span class="k">if</span> <span class="n">x</span> <span class="o">==</span> <span class="mi">4</span> <span class="p">:</span> <span class="nb">print</span> <span class="n">x</span> <span class="p">,</span> <span class="n">y</span> <span class="p">;</span> <span class="n">x</span> <span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">y</span> <span class="p">,</span> <span class="n">x</span>
+
+    <span class="c1"># GOOD</span>
+    <span class="k">if</span> <span class="n">x</span> <span class="o">==</span> <span class="mi">4</span><span class="p">:</span> <span class="nb">print</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">;</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">y</span><span class="p">,</span> <span class="n">x</span>
+
+    <span class="c1"># Function/method calls.</span>
+    <span class="c1">#</span>
+    <span class="c1"># BAD</span>
+    <span class="n">spam</span> <span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+
+    <span class="c1"># GOOD</span>
+    <span class="n">spam</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+
+    <span class="c1"># Indexing/slicing.</span>
+    <span class="c1">#</span>
+    <span class="c1"># BAD</span>
+    <span class="nb">dict</span> <span class="p">[</span><span class="s1">&#39;key&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="nb">list</span> <span class="p">[</span><span class="n">index</span><span class="p">]</span>
+
+    <span class="c1"># GOOD</span>
+    <span class="nb">dict</span><span class="p">[</span><span class="s1">&#39;key&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="nb">list</span><span class="p">[</span><span class="n">index</span><span class="p">]</span>
+
+    <span class="c1"># Groups of assignment statements.</span>
+    <span class="c1">#</span>
+    <span class="c1"># BAD</span>
+    <span class="n">x</span>             <span class="o">=</span> <span class="mi">1</span>
+    <span class="n">y</span>             <span class="o">=</span> <span class="mi">2</span>
+    <span class="n">long_variable</span> <span class="o">=</span> <span class="mi">3</span>
+
+    <span class="c1"># GOOD</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="mi">1</span>
+    <span class="n">y</span> <span class="o">=</span> <span class="mi">2</span>
+    <span class="n">long_variable</span> <span class="o">=</span> <span class="mi">3</span>
+
+    <span class="c1"># These binary operators should aways surrounded with a single space.</span>
+    <span class="c1">#</span>
+    <span class="c1"># assignment (=), comparisons (==, &lt;, &gt;, !=, &lt;&gt;, &lt;=, &gt;=, in, not in, is,</span>
+    <span class="c1"># is not), Booleans (and, or, not).</span>
+
+    <span class="c1"># Use your better judgment for the insertion of spaces around arithmetic</span>
+    <span class="c1"># operators.  Always be consistent about whitespace on either side of a</span>
+    <span class="c1"># binary operator.</span>
+    <span class="c1">#</span>
+    <span class="c1"># Some examples:</span>
+    <span class="n">i</span> <span class="o">=</span> <span class="n">i</span><span class="o">+</span><span class="mi">1</span>
+    <span class="n">submitted</span> <span class="o">=</span> <span class="n">submitted</span> <span class="o">+</span> <span class="mi">1</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="n">x</span><span class="o">*</span><span class="mi">2</span> <span class="o">-</span> <span class="mi">1</span>
+    <span class="n">hypot2</span> <span class="o">=</span> <span class="n">x</span><span class="o">*</span><span class="n">x</span> <span class="o">+</span> <span class="n">y</span><span class="o">*</span><span class="n">y</span>
+    <span class="n">c</span> <span class="o">=</span> <span class="p">(</span><span class="n">a</span><span class="o">+</span><span class="n">b</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="n">a</span><span class="o">-</span><span class="n">b</span><span class="p">)</span>
+    <span class="n">c</span> <span class="o">=</span> <span class="p">(</span><span class="n">a</span> <span class="o">+</span> <span class="n">b</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="n">a</span> <span class="o">-</span> <span class="n">b</span><span class="p">)</span>
+
+    <span class="k">return</span>
+
+
+<span class="c1"># Don&#39;t use spaces around the &#39;=&#39; sign when used to indicate a keyword</span>
+<span class="c1"># argument or a default parameter value.  For instance:</span>
+<span class="k">def</span> <span class="nf">complex</span><span class="p">(</span><span class="n">real</span><span class="p">,</span> <span class="n">imag</span><span class="o">=</span><span class="mf">0.0</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">magic</span><span class="p">(</span><span class="n">r</span><span class="o">=</span><span class="n">real</span><span class="p">,</span> <span class="n">i</span><span class="o">=</span><span class="n">imag</span><span class="p">)</span>
+
+<span class="c1">#### EOF ######################################################################</span>
+</pre></div>
+</div>
 </div>
 
 
@@ -161,10 +519,10 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="ds_project_template.html" class="btn btn-neutral float-right" title="Project Structure" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="ds_project_template.html" class="btn btn-neutral float-right" title="Data Science Project Template" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="contributing.html" class="btn btn-neutral float-left" title="Contributing" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="contributing.html" class="btn btn-neutral float-left" title="How to Contribute" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
