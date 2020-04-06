@@ -1,0 +1,31 @@
+How to Contribute
+=================
+
+https://scikit-learn.org/dev/developers/contributing.html
+
+Ways to contribute
+------------------
+
+Submitting a bug report or a feature request
+--------------------------------------------
+
+Contributing code
+-----------------
+
+Documentation
+-------------
+
+Testing and improving test coverage
+-----------------------------------
+
+Issue Tracker Tags
+------------------
+
+Maintaining backwards compatibility
+-----------------------------------
+
+Code Review Guidelines
+----------------------
+
+Reading the existing code base
+------------------------------
