@@ -3,7 +3,7 @@ Coding Guidelines
 
 Good guidelines to follow are the official Python guidelines detailed in `PEP8 <https://www.python.org/dev/peps/pep-0008>`_ 
 
-A good example is:
+Because one little picture says more than a long speech, the following script is consider as a good example of what to do:
 
 .. code-block:: python
 

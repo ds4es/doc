@@ -1,20 +1,14 @@
 How to Contribute
 =================
 
-These projects are a community effort, and everyone is welcome to contribute.
+**ds4es** projects are community efforts, and everyone is welcome to contribute. There are many ways to contribute. Improving the documentation is no less important than improving code.
 
-The projects are hosted on https://github.com/ds4es
-
-Ways to contribute
-------------------
-There are many ways to contribute to the **Data Science for Emergency Services project**. Improving the documentation is no less important than improving code.
-
-Contributing code
------------------
+Projects are hosted on https://github.com/ds4es
 
 To contribute to any ds4es GitHub repo **in brief:** start by forking it on GitHub, edit your forked version of the repo and submit a "pull request".
 
 **In details:**
+
 1. `Create a GitHub account <https://github.com/join>`_ if you do not already have one.
 
 2. On GitHub under the project you want to contribute click on the 'Fork'
@@ -28,12 +22,12 @@ From there you have 2 options to make changes to your fork:
 * directly on GitHub at https://github.com/your_user_name/repo_name
 * or on your local machine
 
-Option 1: Edit changes directly on GitHub
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Option A: Edit changes directly on GitHub
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 //TODO
 
-Option 2: Edit changes on a local computer
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Option B: Edit changes on a local computer
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 3. Clone the fork from your GitHub account to your local disk::
 
@@ -57,26 +51,25 @@ You have now a git repository properly configured. Next steps describe the proce
 		git checkout master
 		git pull upstream master
 
-8. Create a feature branch to hold your development changes::
+7. Create a feature branch to hold your development changes::
 
 		git checkout -b my_feature_branch
 
-9. Make the changes on your feature branch on your computer. It's good
+8. Make the changes on your feature branch on your computer. It's good
    practice to never work on the ``master`` branch!
    When you're done editing, save your changes locally with `add` and `commit`::
 
-		git add .
-		git commit
+   		# Add all changes to the staging area
+		git add . 
+		# To add only a specific file do: git add filename
+		# Captures a snapshot of the project's currently staged changes in a commit
+		git commit -m "commit descriptive message"
 
    , then push the changes to your fork on GitHub::
 
 		git push -u origin my_feature_branch
 
-
-10. Follow `these
-    <https://help.github.com/articles/creating-a-pull-request-from-a-fork>`_
-    instructions to create a pull request from your fork. This will send an
-    email to the committers.
+9. Follow `these <https://help.github.com/articles/creating-a-pull-request-from-a-fork>`_ instructions to create a pull request from your fork. This will send an email to the committers.
 
 It is a good pratice to keep your local feature branch synchronized with the latest changes of the main repository defined on 5.::
 
@@ -93,14 +86,21 @@ line <https://help.github.com/articles/resolving-a-merge-conflict-using-the-comm
 
   The `Git documentation <https://git-scm.com/documentation>`_ http://try.github.io are excellent resources to get started with git, and understanding all of the commands shown here.
 
+Submit your changes for review
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+If you go to your fork repo on GitHub, you'll see a **Compare & pull request** button. Click on that button.
+
+.. figure::  _static/images/contributing/compare-and-pull.png
+   :align:   center
+
+Now submit the pull request.
+
+.. figure::  _static/images/contributing/submit-pull-request.png
+   :align:   center
+
+Soon all your changes will be merge into the master branch of the project. You will get a notification email once the changes have been merged.
+
 Pull request checklist
 ^^^^^^^^^^^^^^^^^^^^^^
 
 //TODO 
-
-Contributing documentation
---------------------------
-
-//TODO
-
-https://scikit-learn.org/dev/developers/contributing.html

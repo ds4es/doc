@@ -20,7 +20,7 @@ The ds4es GitHub repo (http://github.com/ds4es) aims to a be a welcome place for
 
 *This documentation is heavily inspired by the one made for the wonderful scikit-learn project (https://scikit-learn.org).*
 
-If your are **interested in starting or contributing** to any project that could benefit emergency services, you are warmly welcomed to do so. To help you on your first steps please take a quick look at:
+If your are **interested in starting or contributing to** any project that could benefit emergency services, you are warmly welcomed to do so. To help you on your first steps please take a quick look at:
 
 * :doc:`contributing`
 * :doc:`coding_guidelines`
