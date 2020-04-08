@@ -21,6 +21,7 @@ The ds4es GitHub repo (http://github.com/ds4es) aims to a be a welcome place for
 If your are **interested in starting or contributing to** any project that could benefit emergency services, you are warmly welcomed to do so. To help you on your first steps please take a quick look at:
 
 * :doc:`contributing`
+* :doc:`working_environment`
 * :doc:`coding_guidelines`
 * :doc:`ds_project_template`
 

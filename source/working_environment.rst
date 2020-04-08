@@ -1,8 +1,21 @@
-Setup your Python working environment on Linux
-==============================================
+Setup your working environment 
+==============================
 
-For local developement we advice the use of Anaconda 3.x (or Miniconda 3.x) installed under your /Home/username directory keeping you far away from unintentional troubles messing up your Python OS depedencies.
-And virtualenv to encapsulate the project Python package dependencies in the `./env` subdirectory.
+On Windows
+----------
+
+// TODO
+
+On macOS
+----------
+
+// TODO
+
+On Linux
+--------
+
+For local developement we advice the use of **Anaconda 3.x** (or **Miniconda 3.x**) installed under your ``/home/username`` directory keeping you far away from unintentional troubles messing up your Python OS depedencies.
+And **Virtualenv** to encapsulate the project Python package dependencies in a ``./env`` subdirectory.
 
 Install Anaconda (`Anaconda distribution <https://www.anaconda.com/distribution/>`_ | `Miniconda distribution <https://docs.conda.io/en/latest/miniconda.html>`_
 .. code-block:: default
@@ -19,9 +32,9 @@ Install Anaconda (`Anaconda distribution <https://www.anaconda.com/distribution/
 	./Miniconda3-latest-Linux-x86_64.sh
 
 
-Accept the license terms (`yes`). The propose location `/home/username/miniconda3` is just fine so press ENTER. And finally allow the installer to initialize Anaconda by runnning `conda init` replying `no`.
+Accept the license terms (``yes``). The propose location ``/home/username/miniconda3`` is just fine so press ENTER. And finally allow the installer to initialize Anaconda by runnning ``conda init`` replying ``no``.
 
-Add the Anaconda bin folder location to your `PATH` variable 
+Add the Anaconda bin folder location to your ``PATH`` variable.
 
 .. code-block:: default
 
@@ -36,11 +49,11 @@ Add the Anaconda bin folder location to your `PATH` variable
 To contribute on a Sphinx documentation
 ---------------------------------------
 
-Install Sphinx and the most commonly used Sphinx theme  
+Install the Sphinx package and the most commonly used Sphinx theme.
 
 .. code-block:: default
 
-	pip install Sphinx
+	pip install sphinx
 	pip install sphinx-rtd-theme
 
 
