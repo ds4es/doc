@@ -213,7 +213,7 @@ already have one.</p></li>
 <span id="option-b"></span><h3>Option B: Edit changes on a local computer<a class="headerlink" href="#option-b-edit-changes-on-a-local-computer" title="Permalink to this headline">¶</a></h3>
 <p>Pre-requisite: <a class="reference external" href="https://git-scm.com/book/en/v2/Getting-Started-Installing-Git">Having Git installed</a></p>
 <ol class="arabic" start="3">
-<li><p>Clone the forked repo from your GitHub account to your local working directory:</p>
+<li><p>Clone the forked repo from your GitHub account to a local working directory:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">clone</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">your_user_name</span><span class="o">/</span><span class="n">repo_name</span>
 <span class="n">cd</span> <span class="n">repo_name</span>
 </pre></div>
@@ -222,7 +222,7 @@ already have one.</p></li>
 </ol>
 <p>A git clone will also setup the alias <code class="docutils literal notranslate"><span class="pre">origin</span></code> referring to this remote repository (to this url).</p>
 <ol class="arabic" start="4">
-<li><p>We will define another alias pointing the original repository with the alias name <code class="docutils literal notranslate"><span class="pre">upstream</span></code>. It will be useful to keep your repository
+<li><p>We will define another alias pointing the original repository with the alias name <code class="docutils literal notranslate"><span class="pre">upstream</span></code>. It will be used to keep your repository
 synchronized with the latest changes:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">remote</span> <span class="n">add</span> <span class="n">upstream</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">ds4es</span><span class="o">/</span><span class="n">repo_name</span>
 </pre></div>
@@ -231,14 +231,14 @@ synchronized with the latest changes:</p>
 </ol>
 <p>You have now a git repository properly configured. Next steps describe the process of modifying code and submitting a pull request:</p>
 <ol class="arabic" start="5">
-<li><p>Synchronize your master branch with the upstream master branch:</p>
+<li><p>Working with others, take the habit on a regular basis to synchronize your master branch with the upstream master branch:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">checkout</span> <span class="n">master</span>
 <span class="n">git</span> <span class="n">pull</span> <span class="n">upstream</span> <span class="n">master</span>
 </pre></div>
 </div>
 </li>
 </ol>
-<p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">checkout</span></code> command lets you navigate between branches.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">checkout</span></code> command lets you navigate between branches.</p>
 <ol class="arabic" start="6">
 <li><p>Create and navigate to a new feature branch to hold your development changes:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">checkout</span> <span class="o">-</span><span class="n">b</span> <span class="n">my_feature_branch</span>

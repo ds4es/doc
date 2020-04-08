@@ -11,6 +11,7 @@ Welcome to the Data Science for Emergency Services Project!
    :hidden:
 
    contributing
+   working_environment
    coding_guidelines
    ds_project_template
 

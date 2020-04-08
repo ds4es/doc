@@ -46,6 +46,7 @@ Add the Anaconda bin folder location to your ``PATH`` variable.
 	python --version
 
 
+
 To contribute on a Sphinx documentation
 ---------------------------------------
 
