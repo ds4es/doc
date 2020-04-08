@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Welcome to the Data Science for Emergency Services Project! &mdash; ds4es 0.0.1 documentation</title>
+  <title>Setup your Python working environment on Linux &mdash; ds4es 0.0.1 documentation</title>
   
 
   
@@ -34,8 +34,7 @@
   <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <link rel="index" title="Index" href="genindex.html" />
-    <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="How to Contribute" href="contributing.html" /> 
+    <link rel="search" title="Search" href="search.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -49,7 +48,7 @@
           
 
           
-            <a href="#" class="icon icon-home"> ds4es
+            <a href="index.html" class="icon icon-home"> ds4es
           
 
           
@@ -97,7 +96,7 @@
       <nav class="wy-nav-top" aria-label="top navigation">
         
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="#">ds4es</a>
+          <a href="index.html">ds4es</a>
         
       </nav>
 
@@ -126,15 +125,15 @@
 
   <ul class="wy-breadcrumbs">
     
-      <li><a href="#">Docs</a> &raquo;</li>
+      <li><a href="index.html">Docs</a> &raquo;</li>
         
-      <li>Welcome to the Data Science for Emergency Services Project!</li>
+      <li>Setup your Python working environment on Linux</li>
     
     
       <li class="wy-breadcrumbs-aside">
         
             
-            <a href="_sources/index.rst.txt" rel="nofollow"> View page source</a>
+            <a href="_sources/linux_working_environment.rst.txt" rel="nofollow"> View page source</a>
           
         
       </li>
@@ -147,29 +146,40 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="welcome-to-the-data-science-for-emergency-services-project">
-<h1>Welcome to the Data Science for Emergency Services Project!<a class="headerlink" href="#welcome-to-the-data-science-for-emergency-services-project" title="Permalink to this headline">¶</a></h1>
-<div class="toctree-wrapper compound">
+  <div class="section" id="setup-your-python-working-environment-on-linux">
+<h1>Setup your Python working environment on Linux<a class="headerlink" href="#setup-your-python-working-environment-on-linux" title="Permalink to this headline">¶</a></h1>
+<p>For local developement we advice the use of Anaconda 3.x (or Miniconda 3.x) installed under your /Home/username directory keeping you far away from unintentional troubles messing up your Python OS depedencies.
+And virtualenv to encapsulate the project Python package dependencies in the <cite>./env</cite> subdirectory.</p>
+<p>Install Anaconda (<a class="reference external" href="https://www.anaconda.com/distribution/">Anaconda distribution</a> | <a class="reference external" href="https://docs.conda.io/en/latest/miniconda.html">Miniconda distribution</a>
+.. code-block:: default</p>
+<blockquote>
+<div><p># Install wget
+sudo dnf install wget # On RHEL 8 / CentOS 8 / Fedora
+# Browse to your Downloads directory
+mkdir -p ~/Downloads &amp;&amp; cd ~/Downloads
+# Download one lastest Anaconda installer suiting your OS
+wget <a class="reference external" href="https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh">https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh</a>
+# Add execute rights for this installer
+chmod +x Miniconda3-latest-Linux-x86_64.sh
+# Launch the installation script
+./Miniconda3-latest-Linux-x86_64.sh</p>
+</div></blockquote>
+<p>Accept the license terms (<cite>yes</cite>). The propose location <cite>/home/username/miniconda3</cite> is just fine so press ENTER. And finally allow the installer to initialize Anaconda by runnning <cite>conda init</cite> replying <cite>no</cite>.</p>
+<p>Add the Anaconda bin folder location to your <cite>PATH</cite> variable</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">echo</span> <span class="s1">&#39;export PATH=&quot;$HOME/miniconda3/bin:$PATH&quot;&#39;</span> <span class="o">|</span> <span class="n">tee</span> <span class="o">-</span><span class="n">a</span> <span class="o">~/.</span><span class="n">bashrc</span>
+<span class="o">.</span> <span class="o">~/.</span><span class="n">bashrc</span>
+<span class="c1"># Check your installation</span>
+<span class="n">which</span> <span class="n">python</span>
+<span class="n">python</span> <span class="o">--</span><span class="n">version</span>
+</pre></div>
 </div>
-<p>Emergency services have for most of them limited data analytics ressources and a wide range of common data mining problems.</p>
-<p>The ds4es GitHub repo (<a class="reference external" href="http://github.com/ds4es">http://github.com/ds4es</a>) aims to a be a welcome place for data science projects willing to tackle challenges faced by emergency services.</p>
-<p>If your are <strong>interested in starting or contributing to</strong> any project that could benefit emergency services, you are warmly welcomed to do so. To help you on your first steps please take a quick look at:</p>
-<ul class="simple">
-<li><p><a class="reference internal" href="contributing.html"><span class="doc">How to Contribute</span></a></p></li>
-<li><p><a class="reference internal" href="coding_guidelines.html"><span class="doc">Coding Guidelines</span></a></p></li>
-<li><p><a class="reference internal" href="ds_project_template.html"><span class="doc">Data Science Project Template</span></a></p></li>
-</ul>
-<div class="section" id="our-community-our-values">
-<h2>Our community, our values<a class="headerlink" href="#our-community-our-values" title="Permalink to this headline">¶</a></h2>
-<ul class="simple">
-<li><p>We are a community based on openness and friendly, didactic, discussions.</p></li>
-<li><p>We aspire to treat everybody equally, and value their contributions.</p></li>
-<li><p>Decisions are made based on technical merit and consensus.</p></li>
-<li><p>Code is not the only way to help the project. Reviewing pull requests, answering questions to help others on mailing lists or issues, organizing and teaching tutorials, working on the website, improving the documentation, are all priceless contributions.</p></li>
-<li><p>We abide by the principles of openness, respect, and consideration of others of the Apache Software Foundation: <a class="reference external" href="https://www.apache.org/foundation/policies/conduct">https://www.apache.org/foundation/policies/conduct</a></p></li>
-<li><p>In case you experience issues using this package, do not hesitate to submit a ticket to the GitHub issue tracker. You are also welcome to post feature requests or pull requests.</p></li>
-</ul>
-<p><em>This documentation is heavily inspired by the one made for the wonderful scikit-learn project (https://scikit-learn.org).</em></p>
+<div class="section" id="to-contribute-on-a-sphinx-documentation">
+<h2>To contribute on a Sphinx documentation<a class="headerlink" href="#to-contribute-on-a-sphinx-documentation" title="Permalink to this headline">¶</a></h2>
+<p>Install Sphinx and the most commonly used Sphinx theme</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="n">Sphinx</span>
+<span class="n">pip</span> <span class="n">install</span> <span class="n">sphinx</span><span class="o">-</span><span class="n">rtd</span><span class="o">-</span><span class="n">theme</span>
+</pre></div>
+</div>
 </div>
 </div>
 
@@ -178,13 +188,6 @@
            
           </div>
           <footer>
-  
-    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-      
-        <a href="contributing.html" class="btn btn-neutral float-right" title="How to Contribute" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
-      
-      
-    </div>
   
 
   <hr/>

@@ -1,0 +1,47 @@
+Setup your Python working environment on Linux
+==============================================
+
+For local developement we advice the use of Anaconda 3.x (or Miniconda 3.x) installed under your /Home/username directory keeping you far away from unintentional troubles messing up your Python OS depedencies.
+And virtualenv to encapsulate the project Python package dependencies in the `./env` subdirectory.
+
+Install Anaconda (`Anaconda distribution <https://www.anaconda.com/distribution/>`_ | `Miniconda distribution <https://docs.conda.io/en/latest/miniconda.html>`_
+.. code-block:: default
+
+	# Install wget
+	sudo dnf install wget # On RHEL 8 / CentOS 8 / Fedora
+	# Browse to your Downloads directory
+	mkdir -p ~/Downloads && cd ~/Downloads 
+	# Download one lastest Anaconda installer suiting your OS
+	wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh
+	# Add execute rights for this installer
+	chmod +x Miniconda3-latest-Linux-x86_64.sh
+	# Launch the installation script
+	./Miniconda3-latest-Linux-x86_64.sh
+
+
+Accept the license terms (`yes`). The propose location `/home/username/miniconda3` is just fine so press ENTER. And finally allow the installer to initialize Anaconda by runnning `conda init` replying `no`.
+
+Add the Anaconda bin folder location to your `PATH` variable 
+
+.. code-block:: default
+
+	echo 'export PATH="$HOME/miniconda3/bin:$PATH"' | tee -a ~/.bashrc
+	. ~/.bashrc
+	# Check your installation
+	which python
+	python --version
+
+
+
+To contribute on a Sphinx documentation
+---------------------------------------
+
+Install Sphinx and the most commonly used Sphinx theme  
+
+.. code-block:: default
+
+	pip install Sphinx
+	pip install sphinx-rtd-theme
+
+
+
