@@ -62,25 +62,26 @@ Option B: Edit changes on a local computer
 
 Pre-requisite: `Having Git installed <https://git-scm.com/book/en/v2/Getting-Started-Installing-Git>`_
 
-3. Clone the forked repo from your GitHub account to your local working directory::
+3. Clone the forked repo from your GitHub account to a local working directory::
 
 		git clone https://github.com/your_user_name/repo_name
 		cd repo_name
 
-4. Add the ``upstream`` remote. This saves a reference to the main
-   repository, which you can use to keep your repository
+A git clone will also setup the alias ``origin`` referring to this remote repository (to this url). 
+
+4. We will define another alias pointing the original repository with the alias name ``upstream``. It will be used to keep your repository
    synchronized with the latest changes::
 
 		git remote add upstream https://github.com/ds4es/repo_name
 
 You have now a git repository properly configured. Next steps describe the process of modifying code and submitting a pull request:
 
-5. Synchronize your master branch with the upstream master branch::
-
+5. Working with others, take the habit on a regular basis to synchronize your master branch with the upstream master branch::
+		
 		git checkout master
 		git pull upstream master
 
-``git checkout`` command lets you navigate between branches.
+The ``git checkout`` command lets you navigate between branches.
 
 6. Create and navigate to a new feature branch to hold your development changes::
 

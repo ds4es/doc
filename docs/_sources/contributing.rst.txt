@@ -67,8 +67,9 @@ Pre-requisite: `Having Git installed <https://git-scm.com/book/en/v2/Getting-Sta
 		git clone https://github.com/your_user_name/repo_name
 		cd repo_name
 
-4. Add the ``upstream`` remote. This saves a reference to the main
-   repository, which you can use to keep your repository
+A git clone will also setup the alias ``origin`` referring to this remote repository (to this url). 
+
+4. We will define another alias pointing the original repository with the alias name ``upstream``. It will be useful to keep your repository
    synchronized with the latest changes::
 
 		git remote add upstream https://github.com/ds4es/repo_name
@@ -76,11 +77,11 @@ Pre-requisite: `Having Git installed <https://git-scm.com/book/en/v2/Getting-Sta
 You have now a git repository properly configured. Next steps describe the process of modifying code and submitting a pull request:
 
 5. Synchronize your master branch with the upstream master branch::
-
+		
 		git checkout master
 		git pull upstream master
 
-``git checkout`` command lets you navigate between the branches.
+``git checkout`` command lets you navigate between branches.
 
 6. Create and navigate to a new feature branch to hold your development changes::
 
@@ -124,13 +125,13 @@ To propose your changes to the original GitHub repo (https://github.com/ds4es/re
 .. figure::  _static/images/contributing/pull-request-03.png
    :align:   center
 
-11. And click Create **Pull Request** to create a pull request that is ready for review.
+11. And click **Create pull request** to create a pull request that is ready for review.
 
 
 Keep your local feature branch synchronized
 -------------------------------------------
 
-It is a good pratice to keep your local feature branch synchronized with the latest changes of the main repository defined on 5.::
+It is a good pratice to keep your local feature branch synchronized with the latest changes of the main repository:
 
 		git fetch upstream
 		git merge upstream/master
