@@ -6,12 +6,13 @@ Please refer to [How to contribute](https://ds4es.org/docs/contributing.html) if
 
 ### Prerequisites to build this Sphinx documentation
 
-To build and preview this documentation on your laptop you need to have with `python`, `pip` and the `sphinx` and `sphinx-rtd-theme` packages installed. (See [Setup your working environment](https://ds4es.org/docs/working_environment.html) for more details)
+To build and preview this documentation on your laptop you need to have with `python`, `pip` and the following packages `sphinx` `sphinx-rtd-theme`, `sphinx-sitemap` packages installed. (See [Setup your working environment](https://ds4es.org/docs/working_environment.html) for more details)
 
 You can install `sphinx` and `sphinx-rtd-theme` with `pip`:
 ```
 pip install sphinx
 pip install sphinx-rtd-theme
+pip install sphinx-sitemap
 ```
 
 ### Build and preview the documentation
