@@ -1,12 +1,12 @@
-This repo aims to support the [Data Science for Emergency Services](https://ds4es.github.io/doc/) initiative that is a community effort where everyone is welcome to contribute.
+This repo aims to support the [Data Science for Emergency Services](https://ds4es.org/docs/) initiative that is a community effort where everyone is welcome to contribute.
 
 There are many ways to contribute but improving this documentation is critical.
 
-Please refer to [How to contribute](https://ds4es.github.io/doc/contributing.html) if you are not sure how to contribute to a GitHub repo.
+Please refer to [How to contribute](https://ds4es.org/docs/contributing.html) if you are not sure how to contribute to a GitHub repo.
 
 ### Prerequisites to build this Sphinx documentation
 
-To build and preview this documentation on your laptop you need to have with `python`, `pip` and the `sphinx` and `sphinx-rtd-theme` packages installed. (See [Setup your working environment](https://ds4es.github.io/doc/working_environment.html) for more details)
+To build and preview this documentation on your laptop you need to have with `python`, `pip` and the `sphinx` and `sphinx-rtd-theme` packages installed. (See [Setup your working environment](https://ds4es.org/docs/working_environment.html) for more details)
 
 You can install `sphinx` and `sphinx-rtd-theme` with `pip`:
 ```
