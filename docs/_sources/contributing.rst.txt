@@ -22,7 +22,9 @@ We have also setup a bunch of empty project just waiting for you:
    :align:   center
 
 
-**IMPORTANT:** As soon as possible, any project should have a README.md filled with the minimal informations describing how to install and run the project as it is.
+.. note::
+
+  As soon as possible, any project should have a README.md filled with the minimal informations describing how to install and run the project as it is.
 
 Edit your choosen project
 -------------------------

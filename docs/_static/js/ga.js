@@ -1,3 +1,4 @@
+<!-- Not used for instance custom.js do the job  -->
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-163235556-1"></script>
 <script>

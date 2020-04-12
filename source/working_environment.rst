@@ -14,8 +14,8 @@ On macOS
 On Linux
 --------
 
-For local developement we advice the use of **Anaconda 3.x** (or **Miniconda 3.x**) installed under your ``/home/username`` directory keeping you far away from unintentional troubles messing up your Python OS depedencies.
-And **Virtualenv** to encapsulate the project Python package dependencies in a ``./env`` subdirectory.
+For local developement we advice the use of `Anaconda 3.x <https://www.anaconda.com/distribution/>`_ (or `Miniconda 3.x <https://docs.conda.io/en/latest/miniconda.html>`_) installed under your ``/home/username`` directory keeping you far away from unintentional troubles messing up your Python OS depedencies.
+And `Virtualenv <https://virtualenv.pypa.io>`_ to encapsulate the project Python package dependencies in a ``./env`` subdirectory.
 
 Install Anaconda (`Anaconda distribution <https://www.anaconda.com/distribution/>`_ | `Miniconda distribution <https://docs.conda.io/en/latest/miniconda.html>`_
 
@@ -55,6 +55,6 @@ Install the Sphinx package and the most commonly used Sphinx theme.
 
 	pip install sphinx
 	pip install sphinx-rtd-theme
-
+	pip install sphinx-sitemap
 
 

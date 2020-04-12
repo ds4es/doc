@@ -38,3 +38,11 @@ Our community, our values
 
 *This documentation is heavily inspired by the one made for the wonderful scikit-learn project (https://scikit-learn.org).*
 
+Our repos
+---------
+
+.. raw:: html
+
+    <iframe src="_static/html/repos.html" style="display: block; width: 100%; height: 600px; border: none;"></iframe>
+
+|
