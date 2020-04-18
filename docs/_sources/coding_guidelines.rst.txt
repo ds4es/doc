@@ -1,7 +1,11 @@
 Coding Guidelines
 =================
 
-Good guidelines to follow are the official Python guidelines detailed in `PEP8 <https://www.python.org/dev/peps/pep-0008>`_ 
+Check:
+* [Documenting Python Code](https://developer.lsst.io/v/DM-5063/docs/py_docs.html)
+* [Documenting C++ Code](https://developer.lsst.io/cpp/api-docs.html)
+* [How to use Sphinx to generate attractive, functional documentation for C++ libraries, supplied with information from Doxygen](https://devblogs.microsoft.com/cppblog/clear-functional-c-documentation-with-sphinx-breathe-doxygen-cmake/)
+* [Top 10 Most Common C++ Mistakes That Developers Make](https://www.toptal.com/c-plus-plus/top-10-common-c-plus-plus-developer-mistakes)
 
 Because one little picture says more than a long speech, the following script is consider as a good example of what to do:
 

@@ -24,6 +24,9 @@ author = 'ds4es'
 # The full version, including alpha/beta/rc tags
 release = '0.0.1'
 
+# HTML tags
+html_title = 'Data Science for Emergency Services'
+
 
 # -- General configuration ---------------------------------------------------
 
