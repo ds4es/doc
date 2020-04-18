@@ -1,7 +1,7 @@
-.. ds4es documentation master file, created by
-   sphinx-quickstart on Mon Apr  6 07:58:12 2020.
-   You can adapt this file completely to your liking, but it should at least
-   contain the root `toctree` directive.
+.. meta::
+   :title: Data Science for Emergency Services
+   :description: A welcome place made for people and data science projects willing to tackle challenges faced by emergency services.
+   :keywords: emergency service, EMS, emergency medical services, fire department, firefighting, hazardous materials response, police, law enforcement, criminal investigation, maintenance of public order. markup language, data science, machine learning, artificial intelligence, AI, deep learning, python, open source, FOSS, free and open-source software, collaboration
 
 Welcome to the Data Science for Emergency Services Project!
 ===========================================================
@@ -17,7 +17,7 @@ Welcome to the Data Science for Emergency Services Project!
 
 Emergency services have for most of them limited data analytics ressources and a wide range of common data mining problems.
 
-The ds4es GitHub repo (http://github.com/ds4es) aims to a be a welcome place for data science projects willing to tackle challenges faced by emergency services.
+The ds4es GitHub repo (http://github.com/ds4es) aims to a be a welcome place for people and data science projects willing to tackle challenges faced by emergency services.
 
 If your are **interested in starting or contributing to** any project that could benefit emergency services, you are warmly welcomed to do so. To help you on your first steps please take a quick look at:
 
