@@ -2,6 +2,9 @@
    :description: A welcome place made for people and data science projects willing to tackle challenges faced by emergency services.
    :keywords: emergency service, EMS, emergency medical services, fire department, firefighting, hazardous materials response, police, law enforcement, criminal investigation, maintenance of public order. markup language, data science, machine learning, artificial intelligence, AI, deep learning, python, open source, FOSS, free and open-source software, collaboration
 
+.. meta::
+	:msvalidate.01: ACA4530322B20FB2975AE517E44ACD8E
+
 Welcome to the Data Science for Emergency Services Project!
 ===========================================================
 
