@@ -36,7 +36,7 @@ html_title = 'Data Science for Emergency Services'
 extensions =  ['sphinx_sitemap']
 
 # Needed for Sphinx-sitemap: https://pypi.org/project/sphinx-sitemap/
-html_baseurl = 'https://http://ds4es.org/docs/'
+html_baseurl = 'https://ds4es.org/docs/'
 
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ['_templates']
