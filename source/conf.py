@@ -25,7 +25,7 @@ author = 'ds4es'
 release = '0.0.1'
 
 # HTML tags
-html_title = 'Data Science for Emergency Services'
+html_title = 'Documentation for the Data Science for Emergency Services Initiative'
 
 
 # -- General configuration ---------------------------------------------------

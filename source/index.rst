@@ -1,12 +1,12 @@
 .. meta::
-   :description: A welcome place made for people and data science projects willing to tackle challenges faced by emergency services.
-   :keywords: emergency service, EMS, emergency medical services, fire department, firefighting, hazardous materials response, police, law enforcement, criminal investigation, maintenance of public order. markup language, data science, machine learning, artificial intelligence, AI, deep learning, python, open source, FOSS, free and open-source software, collaboration
+   :description: Documentation for the data science for emergency services initiative (ds4es.org), which is a welcome place for people and data science projects willing to tackle challenges faced by emergency services.
+   :keywords: documentation, emergency service, EMS, emergency medical services, fire department, firefighting, hazardous materials response, police, law enforcement, criminal investigation, maintenance of public order. markup language, data science, machine learning, artificial intelligence, AI, deep learning, python, open source, FOSS, free and open-source software, collaboration
 
 .. meta::
 	:msvalidate.01: ACA4530322B20FB2975AE517E44ACD8E
 
-Welcome to the Data Science for Emergency Services Project!
-===========================================================
+Documentation for the Data Science for Emergency Services Initiative!
+=====================================================================
 
 .. toctree::
    :maxdepth: 2
@@ -19,7 +19,9 @@ Welcome to the Data Science for Emergency Services Project!
 
 Emergency services have for most of them limited data analytics ressources and a wide range of common data mining problems.
 
-The ds4es GitHub repo (http://github.com/ds4es) aims to a be a welcome place for people and data science projects willing to tackle challenges faced by emergency services.
+The ds4es GitHub repo (https://github.com/ds4es) aims to a be a welcome place for people and data science projects willing to tackle challenges faced by emergency services.
+
+To have a reader-friendly overview of the different open projects see: https://ds4es.org
 
 If your are **interested in starting or contributing to** any project that could benefit emergency services, you are warmly welcomed to do so. To help you on your first steps please take a quick look at:
 
