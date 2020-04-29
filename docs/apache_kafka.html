@@ -1,0 +1,344 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Apache Kafka &mdash; Data Science for Emergency Services</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/language_data.js"></script>
+        <script src="_static/js/custom.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> ds4es
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="contributing.html">How to Contribute</a></li>
+<li class="toctree-l1"><a class="reference internal" href="working_environment.html">Setup your working environment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="coding_guidelines.html">Coding Guidelines</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ds_project_template.html">Data Science Project Template</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">ds4es</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>Apache Kafka</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/apache_kafka.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="apache-kafka">
+<h1>Apache Kafka<a class="headerlink" href="#apache-kafka" title="Permalink to this headline">¶</a></h1>
+<p>Source:
+* <a class="reference external" href="https://www.digitalocean.com/community/tutorials/how-to-install-apache-kafka-on-centos-7">https://www.digitalocean.com/community/tutorials/how-to-install-apache-kafka-on-centos-7</a>
+* <a class="reference external" href="https://kafka.apache.org/quickstart">https://kafka.apache.org/quickstart</a></p>
+<div class="section" id="prerequisites">
+<h2>Prerequisites<a class="headerlink" href="#prerequisites" title="Permalink to this headline">¶</a></h2>
+<p>Install prerequisites package</p>
+<blockquote>
+<div><p>sudo dnf install java-11-openjdk wget</p>
+</div></blockquote>
+</div>
+<div class="section" id="creating-a-user-for-kafka">
+<h2>Creating a User for Kafka<a class="headerlink" href="#creating-a-user-for-kafka" title="Permalink to this headline">¶</a></h2>
+<p>Since Kafka can handle requests over a network, you should create a dedicated user for it. This minimizes damage to your CentOS machine should the Kafka server be compromised.</p>
+<p>Create a user for Kafka</p>
+<blockquote>
+<div><p>sudo useradd kafka -m</p>
+</div></blockquote>
+<p>Set the password for your <code class="docutils literal notranslate"><span class="pre">kafka</span></code> user</p>
+<blockquote>
+<div><p>sudo passwd kafka</p>
+</div></blockquote>
+<p>Give your <code class="docutils literal notranslate"><span class="pre">kafka</span></code> user root privileges</p>
+<blockquote>
+<div><p>sudo usermod -aG wheel kafka</p>
+</div></blockquote>
+<p>Log into this new account</p>
+<blockquote>
+<div><p>su -l kafka</p>
+</div></blockquote>
+</div>
+<div class="section" id="downloading-and-extracting-the-kafka-binaries">
+<h2>Downloading and Extracting the Kafka Binaries<a class="headerlink" href="#downloading-and-extracting-the-kafka-binaries" title="Permalink to this headline">¶</a></h2>
+<p>Download the Kafka binaries in <code class="docutils literal notranslate"><span class="pre">/home/kafka/Downloads</span></code></p>
+<blockquote>
+<div><p>wget -P ~/Downloads <a class="reference external" href="https://downloads.apache.org/kafka/2.5.0/kafka_2.13-2.5.0.tgz">https://downloads.apache.org/kafka/2.5.0/kafka_2.13-2.5.0.tgz</a></p>
+</div></blockquote>
+<p>Create a directory called kafka and change to this directory</p>
+<blockquote>
+<div><p>mkdir ~/kafka &amp;&amp; cd ~/kafka</p>
+</div></blockquote>
+<p>Extract the archive in it</p>
+<blockquote>
+<div><p>tar -xvzf ~/Downloads/kafka_2.13-2.5.0.tgz –strip 1</p>
+</div></blockquote>
+</div>
+<div class="section" id="configuring-the-kafka-server">
+<h2>Configuring the Kafka Server<a class="headerlink" href="#configuring-the-kafka-server" title="Permalink to this headline">¶</a></h2>
+<p>Kafka’s default behavior will not allow us to delete a topic, the category, group, or feed name to which messages can be published. To modify this, let’s edit the configuration file.</p>
+<p>To allow us to delete Kafka topics, add the following to the bottom of the file</p>
+<blockquote>
+<div><p>echo ‘
+delete.topic.enable = true
+‘ | tee -a ~/kafka/config/server.properties</p>
+</div></blockquote>
+<p>Save and close the file</p>
+</div>
+<div class="section" id="creating-systemd-unit-files-and-starting-the-kafka-server">
+<h2>Creating Systemd Unit Files and Starting the Kafka Server<a class="headerlink" href="#creating-systemd-unit-files-and-starting-the-kafka-server" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="zookeeper">
+<h3>Zookeeper<a class="headerlink" href="#zookeeper" title="Permalink to this headline">¶</a></h3>
+<p>Create the unit file for Zookeeper</p>
+<blockquote>
+<div><p>echo ”
+[Unit]
+Requires=network.target remote-fs.target
+After=network.target remote-fs.target</p>
+<p>[Service]
+Type=simple
+User=kafka
+ExecStart=/home/kafka/kafka/bin/zookeeper-server-start.sh /home/kafka/kafka/config/zookeeper.properties
+ExecStop=/home/kafka/kafka/bin/zookeeper-server-stop.sh
+Restart=on-abnormal</p>
+<p>[Install]
+WantedBy=multi-user.target
+” | sudo tee /etc/systemd/system/zookeeper.service</p>
+</div></blockquote>
+<p>Save and close the file</p>
+</div>
+<div class="section" id="kafka">
+<h3>Kafka<a class="headerlink" href="#kafka" title="Permalink to this headline">¶</a></h3>
+<p>Create the unit file for Kafka</p>
+<blockquote>
+<div><p>echo ”
+[Unit]
+Requires=zookeeper.service
+After=zookeeper.service</p>
+<p>[Service]
+Type=simple
+User=kafka
+ExecStart=/bin/sh -c ‘/home/kafka/kafka/bin/kafka-server-start.sh /home/kafka/kafka/config/server.properties &gt; /home/kafka/kafka/kafka.log 2&gt;&amp;1’
+ExecStop=/home/kafka/kafka/bin/kafka-server-stop.sh
+Restart=on-abnormal</p>
+<p>[Install]
+WantedBy=multi-user.target
+” | sudo tee /etc/systemd/system/kafka.service</p>
+</div></blockquote>
+<p>Save and close the file</p>
+<p>To avoid an error caused by the fact no rule in SELinux policy allows the specific access: allow non-transitioning execution of a file with context config_home_t by a process running in init_t domain.</p>
+<p>Generate a local policy module to allow this access:</p>
+<blockquote>
+<div><p>sudo ausearch -c ‘(start.sh)’ –raw | sudo audit2allow -M zookeeper-server-start.sh</p>
+<p>sudo semodule -X 300 -i zookeeper-server-start.sh.pp</p>
+<p>sudo ausearch -c ‘zookeeper-serve’ –raw | sudo audit2allow -M kafka-server-stop.sh</p>
+<p>sudo semodule -X 300 -i kafka-server-stop.sh.pp</p>
+</div></blockquote>
+<p>Start Kafka</p>
+<blockquote>
+<div><p>sudo systemctl start kafka</p>
+</div></blockquote>
+<p>Check a Kafka server is running</p>
+<blockquote>
+<div><p>journalctl -u kafka</p>
+</div></blockquote>
+<p>Enable kafka on server boot</p>
+<blockquote>
+<div><p>sudo systemctl enable kafka</p>
+</div></blockquote>
+</div>
+<div class="section" id="testing-the-installation">
+<h3>Testing the Installation<a class="headerlink" href="#testing-the-installation" title="Permalink to this headline">¶</a></h3>
+<p>Publishing messages in Kafka requires:</p>
+<ul class="simple">
+<li><p>A producer, which enables the publication of records and data to topics.</p></li>
+<li><p>A consumer, which reads messages and data from topics.</p></li>
+</ul>
+<p>Create a topic named <code class="docutils literal notranslate"><span class="pre">TutorialTopic</span></code>:</p>
+<blockquote>
+<div><p>~/kafka/bin/kafka-topics.sh –create –zookeeper localhost:2181 –replication-factor 1 –partitions 1 –topic TutorialTopic</p>
+</div></blockquote>
+<p>You will see the following output:</p>
+<p>Output
+Created topic “TutorialTopic”.</p>
+<p>You can create a producer from the command line using the <code class="docutils literal notranslate"><span class="pre">kafka-console-producer.sh</span></code> script. It expects the Kafka server’s hostname, port, and a topic name as arguments.</p>
+<p>Publish the string <code class="docutils literal notranslate"><span class="pre">&quot;Hello,</span> <span class="pre">World&quot;</span></code> to the <code class="docutils literal notranslate"><span class="pre">TutorialTopic</span></code> topic by typing:</p>
+<blockquote>
+<div><p>echo “Hello, World” | ~/kafka/bin/kafka-console-producer.sh –broker-list localhost:9092 –topic TutorialTopic &gt; /dev/null</p>
+</div></blockquote>
+<p>Next, you can create a Kafka consumer using the <code class="docutils literal notranslate"><span class="pre">kafka-console-consumer.sh</span></code> script. It expects the ZooKeeper server’s hostname and port, along with a topic name as arguments.</p>
+<p>The following command consumes messages from <code class="docutils literal notranslate"><span class="pre">TutorialTopic</span></code>. Note the use of the <code class="docutils literal notranslate"><span class="pre">--from-beginning</span></code> flag, which allows the consumption of messages that were published before the consumer was started:</p>
+<blockquote>
+<div><p>~/kafka/bin/kafka-console-consumer.sh –bootstrap-server localhost:9092 –topic TutorialTopic –from-beginning</p>
+</div></blockquote>
+<p>If there are no configuration issues, you should see <code class="docutils literal notranslate"><span class="pre">Hello,</span> <span class="pre">World</span></code> in your terminal:</p>
+<p>Output
+Hello, World</p>
+<p>The script will continue to run, waiting for more messages to be published to the topic. Feel free to open a new terminal and start a producer to publish a few more messages. You should be able to see them all in the consumer’s output.</p>
+<p>When you are done testing, press <code class="docutils literal notranslate"><span class="pre">CTRL+C</span></code> to stop the consumer script. Now that we have tested the installation, let’s move on to installing KafkaT.</p>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2020, ds4es
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
